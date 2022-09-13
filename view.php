@@ -1,3 +1,6 @@
+<?php
+include('connect.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,6 +64,7 @@
                     <h1 class="fw-light">Bob's Fridges | Beheersysteem</h1>
                     <p class="lead text-muted">Op deze pagina kan de data gewijzigd worden.
                         Ook is het mogelijk om nieuwe data toe te voegen of te verwijderen</p>
+                    <p><a href="#" class="btn btn-secondary my-1">Data toevoegen</a></p>
                 </div>
             </div>
         </section>
@@ -71,12 +75,12 @@
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                     <div class="col">
                         <div class="card shadow-sm">
-                            <img src="images/profile.png" class="card-img-top">
+                            <img src="<?= $fridgeTable['koelkast_foto'] ?>" class="card-img-top">
                             </img>
 
                             <div class="card-body">
-                                <p class="card-text">Artikelnummer: 199000u34737.</p>
-                                <p class="card-text">Beschrijving: hjbdsfkhfhkafhkuhu</p>
+                                <p class="card-text">Artikelnummer: <?= $fridgeTable['artikelnummer'] ?></p>
+                                <p class="card-text">Beschrijving: <?= $fridgeTable['beschrijving'] ?></p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-sm btn-outline-secondary">Verwijderen</button>
