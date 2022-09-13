@@ -95,9 +95,6 @@
     <footer class="text-muted py-5 bg-dark">
         <div class="container">
             <p class="text-muted">Deze pagina en alle bijbehorende zijn bezit van Bob's fridges&copy;.</p>
-            <p class="float-end mb-1">
-                <a href="#">Back to top</a>
-            </p>
         </div>
     </footer>
 
