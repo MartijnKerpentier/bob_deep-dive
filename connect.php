@@ -14,4 +14,4 @@ try {
     echo "Connection failed: " . $e->getMessage();
 }
 
-$fridgeTable = $pdo->query('SELECT * FROM koelkasten')->fetch();
+$fridgeTable = $pdo->query('SELECT * FROM koelkasten')->fetchAll();

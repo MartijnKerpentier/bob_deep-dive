@@ -1,5 +1,6 @@
 <?php
 include('connect.php');
+$count = $pdo->query('SELECT id FROM koelkasten')->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,7 +8,7 @@ include('connect.php');
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>View data · Bob's Fridges</title>
+    <title>Bekijk data · Bob's Fridges</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="view.css">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
@@ -32,11 +33,10 @@ include('connect.php');
                         </p>
                     </div>
                     <div class="col-sm-4 offset-md-1 py-4">
-                        <h4 class="text-white">Contact</h4>
+                        <h4 class="text-white">Navigatie</h4>
                         <ul class="list-unstyled">
-                            <li><a href="#" class="text-white">Follow on Twitter</a></li>
-                            <li><a href="#" class="text-white">Like on Facebook</a></li>
-                            <li><a href="#" class="text-white">Email me</a></li>
+                            <li><a href="index.html" class="text-white">Home pagina</a></li>
+                            <li><a href="contact.html" class="text-white">Contact pagina</a></li>
                         </ul>
                     </div>
                 </div>
@@ -64,41 +64,48 @@ include('connect.php');
                     <h1 class="fw-light">Bob's Fridges | Beheersysteem</h1>
                     <p class="lead text-muted">Op deze pagina kan de data gewijzigd worden.
                         Ook is het mogelijk om nieuwe data toe te voegen of te verwijderen</p>
-                    <p><a href="#" class="btn btn-secondary my-1">Data toevoegen</a></p>
+                    <p><a href="create.php" class="btn btn-secondary my-1">Data toevoegen</a></p>
                 </div>
             </div>
         </section>
 
-        <div class="album py-5 bg-light">
-            <div class="container">
+        <form action="update.php" method="get">
+            <div class="album py-5 bg-light">
+                <div class="container">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                        <?php
+                        for ($i = 0; $i < count($count); $i++) {
+                        ?>
+                            <div class="col">
+                                <div class="card shadow-sm">
+                                    <img src="<?= $fridgeTable[$i]['koelkast_foto'] ?>" class="card-img-top">
+                                    </img>
 
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <img src="<?= $fridgeTable['koelkast_foto'] ?>" class="card-img-top">
-                            </img>
-
-                            <div class="card-body">
-                                <p class="card-text">Artikelnummer: <?= $fridgeTable['artikelnummer'] ?></p>
-                                <p class="card-text">Beschrijving: <?= $fridgeTable['beschrijving'] ?></p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Verwijderen</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Wijzigen</button>
+                                    <div class="card-body">
+                                        <p class="card-text">Artikelnummer: <?= $fridgeTable[$i]['artikelnummer'] ?></p>
+                                        <p class="card-text">Beschrijving: <?= $fridgeTable[$i]['beschrijving'] ?></p>
+                                        <p class="card-text">Status: <?= $fridgeTable[$i]['koelkast_status'] ?></p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <button type="submit" class="btn btn-sm btn-outline-secondary" value="<?= $fridgeTable[$i]["id"]?>" name="id">Wijzigen</button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
 
     </main>
 
-    <footer class="text-muted py-5 bg-dark">
+    <footer class="text-muted text-center py-5 bg-dark">
         <div class="container">
-            <p class="text-muted">Deze pagina en alle bijbehorende zijn bezit van Bob's fridges&copy;.</p>
+            <p class="text-muted">&copy; 2023 Bob's Fridges.</p>
         </div>
     </footer>
 
