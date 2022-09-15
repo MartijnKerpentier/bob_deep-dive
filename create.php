@@ -5,13 +5,14 @@ if (isset($_POST['koelkast_foto'])) {
     $description = $_POST["beschrijving"];
     $article = $_POST["artikelnummer"];
     $state = $_POST["status"];
+    $price = $_POST["prijs"];
 }
 if (isset($_POST['submit'])) {
     $sql = "INSERT INTO 
         `koelkasten`
-        (`koelkast_foto`, `beschrijving`, `artikelnummer`, `koelkast_status`)
+        (`koelkast_foto`, `beschrijving`, `artikelnummer`, `koelkast_status`, `prijs`)
         VALUES 
-        ('$image', '$description', '$article', '$state')";
+        ('$image', '$description', '$article', '$state', '$price')";
         $pdo->exec($sql);
     header("Location: view.php");
 }
@@ -80,10 +81,18 @@ if (isset($_POST['submit'])) {
                             </div>
 
                             <div class="col-12">
-                                <label for="address" class="form-label">Status van de koelkast</label>
+                                <label for="status" class="form-label">Status van de koelkast</label>
                                 <input type="text" class="form-control" name="status" placeholder="gebruikt/nieuw" required>
                                 <div class="invalid-feedback">
                                     Vul de status van de koelkast in.
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="prijs" class="form-label">Geschatte prijs van de koelkast</label>
+                                <input type="text" class="form-control" name="prijs" placeholder="geschatte prijs" required>
+                                <div class="invalid-feedback">
+                                    Vul de geschatte prijs van de koelkast in.
                                 </div>
                             </div>
                         </div>

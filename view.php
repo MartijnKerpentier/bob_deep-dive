@@ -60,7 +60,7 @@ $count = $pdo->query('SELECT id FROM koelkasten')->fetchAll();
                 <div class="col-lg-6 col-md-8 mx-auto">
                     <h1 class="fw-light">Bob's Fridges | Beheersysteem</h1>
                     <p class="lead text-muted">Op deze pagina kan de data gewijzigd worden.
-                        Ook is het mogelijk om nieuwe data toe te voegen of te verwijderen</p>
+                        Ook is het mogelijk om nieuwe data toe te voegen.</p>
                     <p><a href="create.php" class="btn btn-secondary my-1">Data toevoegen</a></p>
                 </div>
             </div>
@@ -85,6 +85,7 @@ $count = $pdo->query('SELECT id FROM koelkasten')->fetchAll();
                                             <div class="btn-group">
                                                 <button type="submit" class="btn btn-sm btn-outline-secondary" value="<?= $fridgeTable[$i]["id"] ?>" name="id">Wijzigen</button>
                                             </div>
+                                            <small class="card-text">Prijs: <?= $fridgeTable[$i]['prijs'] ?>€</small>
                                         </div>
                                     </div>
                                 </div>

@@ -51,7 +51,8 @@ if (isset($_POST['submit'])) {
                         <h4 class="text-white">Navigatie</h4>
                         <ul class="list-unstyled">
                             <li><a href="index.html" class="text-white">Home</a></li>
-                            <li><a href="contact.html" class="text-white">Contact</a></li>
+                            <li><a href="contact.php" class="text-white">Contact</a></li>
+                            <li><a href="products.php" class="text-white">Assortiment</a></li>
                             <li><a href="view.php" class="text-white">Beheersysteem</a></li>
                         </ul>
                     </div>

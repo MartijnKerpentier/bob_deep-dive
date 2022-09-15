@@ -13,13 +13,15 @@ if (isset($_POST["id"])) {
     $description = $_POST["beschrijving"];
     $articleNumber = $_POST["artikelnummer"];
     $state = $_POST["status"];
+    $price = $_POST["prijs"];
 }
 if (isset($_POST["submit"])) {
     $sql = "UPDATE koelkasten SET
             `koelkast_foto`='$image',
             `beschrijving`='$description',
             `artikelnummer`='$articleNumber',
-            `koelkast_status`='$state'
+            `koelkast_status`='$state',
+            `prijs`='$price'
             WHERE id=$id";
     $pdo->exec($sql);
     header("Location: view.php");
@@ -50,7 +52,7 @@ $fridgeTable2 = $pdo->query('SELECT * FROM koelkasten WHERE id = ' . $id2)->fetc
     <div class="container">
         <main>
             <div class="py-5 text-center">
-                <h2>Data toevoegen</h2>
+                <h2>Data wijzigen</h2>
                 <p class="lead">Door dit onderstaande formulier in te vullen is het mogelijk om de geselecteerde data te wijzigen.</p>
                 <hr class="my-4">
                 <p class="lead text-info">'Foto van de koelkast' bevat het adres van de gewenste afbeelding.</p>
@@ -91,15 +93,23 @@ $fridgeTable2 = $pdo->query('SELECT * FROM koelkasten WHERE id = ' . $id2)->fetc
                             </div>
 
                             <div class="col-12">
-                                <label for="address" class="form-label">Status van de koelkast</label>
+                                <label for="status" class="form-label">Status van de koelkast</label>
                                 <input type="text" class="form-control" name="status" value="<?= $fridgeTable2['koelkast_status'] ?>" required>
                                 <div class="invalid-feedback">
                                     Vul de status van de koelkast in.
                                 </div>
                             </div>
+
+                            <div class="col-12">
+                                <label for="prijs" class="form-label">Geschatte prijs van de koelkast</label>
+                                <input type="text" class="form-control" name="prijs" value="<?= $fridgeTable2['prijs'] ?>" required>
+                                <div class="invalid-feedback">
+                                    Vul de geschatte prijs van de koelkast in.
+                                </div>
+                            </div>
                         </div>
                         <hr class="my-4">
-                         
+                        <button class="w-100 btn btn-primary btn-lg" type="submit" name="submit">Data wijzigen</button>
                     </form>
                 </div>
             </div>
