@@ -51,10 +51,11 @@ $fridgeTable2 = $pdo->query('SELECT * FROM koelkasten WHERE id = ' . $id2)->fetc
         <main>
             <div class="py-5 text-center">
                 <h2>Data toevoegen</h2>
-                <p class="lead">Door dit onderstaande formulier in te vullen is het mogelijk om nieuwe data toe te voegen aan het beheersysteem.</p>
-                <p class="lead text-muted">Bij foto moet je het adres van de afbeelding neerzetten.</p>
-                <p class="lead text-muted">Artikelnummer heeft een maximaal aantal van 11 cijfers.</p>
-                <p class="lead text-muted">Status kan alleen gebruikt of nieuw zijn.</p>
+                <p class="lead">Door dit onderstaande formulier in te vullen is het mogelijk om de geselecteerde data te wijzigen.</p>
+                <hr class="my-4">
+                <p class="lead text-info">'Foto van de koelkast' bevat het adres van de gewenste afbeelding.</p>
+                <p class="lead text-info">Artikelnummer heeft een maximaal aantal van 11 cijfers.</p>
+                <p class="lead text-info">Status kan alleen gebruikt of nieuw zijn.</p>
             </div>
 
             <div class="row g-5">
