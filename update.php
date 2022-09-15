@@ -99,7 +99,7 @@ $fridgeTable2 = $pdo->query('SELECT * FROM koelkasten WHERE id = ' . $id2)->fetc
                             </div>
                         </div>
                         <hr class="my-4">
-                        <button class="w-100 btn btn-primary btn-lg" type="submit" name="submit">Data wijzigen</button>
+                         
                     </form>
                 </div>
             </div>

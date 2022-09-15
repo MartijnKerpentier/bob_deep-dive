@@ -21,7 +21,6 @@ $count = $pdo->query('SELECT id FROM koelkasten')->fetchAll();
 </head>
 
 <body>
-
     <header>
         <div class="collapse bg-info" id="navbarHeader">
             <div class="container">
@@ -36,7 +35,7 @@ $count = $pdo->query('SELECT id FROM koelkasten')->fetchAll();
                         <h4 class="text-white">Navigatie</h4>
                         <ul class="list-unstyled">
                             <li><a href="index.html" class="text-white">Home pagina</a></li>
-                            <li><a href="contact.html" class="text-white">Contact pagina</a></li>
+                            <li><a href="contact.php" class="text-white">Contact pagina</a></li>
                         </ul>
                     </div>
                 </div>
@@ -55,9 +54,7 @@ $count = $pdo->query('SELECT id FROM koelkasten')->fetchAll();
             </div>
         </div>
     </header>
-
     <main>
-
         <section class="py-5 text-center container">
             <div class="row py-lg-5">
                 <div class="col-lg-6 col-md-8 mx-auto">
@@ -80,14 +77,13 @@ $count = $pdo->query('SELECT id FROM koelkasten')->fetchAll();
                                 <div class="card shadow-sm">
                                     <img src="<?= $fridgeTable[$i]['koelkast_foto'] ?>" class="card-img-top">
                                     </img>
-
                                     <div class="card-body">
                                         <p class="card-text">Artikelnummer: <?= $fridgeTable[$i]['artikelnummer'] ?></p>
                                         <p class="card-text">Beschrijving: <?= $fridgeTable[$i]['beschrijving'] ?></p>
                                         <p class="card-text">Status: <?= $fridgeTable[$i]['koelkast_status'] ?></p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="btn-group">
-                                                <button type="submit" class="btn btn-sm btn-outline-secondary" value="<?= $fridgeTable[$i]["id"]?>" name="id">Wijzigen</button>
+                                                <button type="submit" class="btn btn-sm btn-outline-secondary" value="<?= $fridgeTable[$i]["id"] ?>" name="id">Wijzigen</button>
                                             </div>
                                         </div>
                                     </div>
@@ -100,19 +96,13 @@ $count = $pdo->query('SELECT id FROM koelkasten')->fetchAll();
                 </div>
             </div>
         </form>
-
     </main>
-
     <footer class="text-muted text-center py-5 bg-dark">
         <div class="container">
             <p class="text-muted">&copy; 2023 Bob's Fridges.</p>
         </div>
     </footer>
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-
-
 </body>
 
 </html>
