@@ -117,7 +117,7 @@ $fridgeTable2 = $pdo->query('SELECT * FROM koelkasten WHERE id = ' . $id2)->fetc
 
         <footer class="text-muted text-center py-5">
             <div class="container">
-                <p class="mb-1">&copy; 2023 Bob's Fridges</p>
+                <p class="mb-1">&copy; 2022 Bob's Fridges</p>
             </div>
         </footer>
     </div>

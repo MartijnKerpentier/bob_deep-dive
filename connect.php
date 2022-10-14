@@ -1,4 +1,5 @@
 <?php
+session_start();
 $servername = "localhost";
 $username = "bit_academy";
 $password = "bit_academy";
@@ -15,3 +16,5 @@ try {
 }
 
 $fridgeTable = $pdo->query('SELECT * FROM koelkasten')->fetchAll();
+$contactTable = $pdo->query('SELECT * FROM contact')->fetchAll();
+$usersTable = $pdo->query('SELECT * FROM users')->fetchAll();

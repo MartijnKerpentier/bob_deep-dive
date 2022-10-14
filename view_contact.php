@@ -1,6 +1,5 @@
 <?php
 include('connect.php');
-$count = $pdo->query('SELECT id FROM contact')->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +10,7 @@ $count = $pdo->query('SELECT id FROM contact')->fetchAll();
     <title>Bekijk berichten · GameCollect</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="view.css">
+    <link rel="stylesheet" href="contact.css">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
@@ -22,30 +22,30 @@ $count = $pdo->query('SELECT id FROM contact')->fetchAll();
 
 <body>
     <header>
-        <div class="collapse bg-danger" id="navbarHeader">
+    <div class="collapse bg-info" id="navbarHeader">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8 col-md-7 py-4">
-                        <h4 class="text-dark">Over deze pagina:</h4>
-                        <p class="text-dark">Bij deze pagina is een overzicht beschikbaar van alle contact berichten.
+                        <h4 class="text-white">Over deze pagina:</h4>
+                        <p class="text-muted">Bij deze pagina is een overzicht beschikbaar van de contactberichten
                         </p>
                     </div>
                     <div class="col-sm-4 offset-md-1 py-4">
-                        <h4 class="text-dark">Navigatie</h4>
+                        <h4 class="text-white">Navigatie</h4>
                         <ul class="list-unstyled">
-                            <li><a href="index.html" class="text-dark">Home pagina</a></li>
+                            <li><a href="index.html" class="text-white">Home pagina</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="navbar navbar-dark bg-danger shadow-sm">
+        <div class="navbar navbar-dark bg-info shadow-sm">
             <div class="container">
-                <p class="navbar-brand d-flex align-items-center">
+                <a href="#" class="navbar-brand d-flex align-items-center">
                     <img src="images/profile.png" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24">
                     </img>
-                    <strong class="text-dark">Bob Vance</strong>
-                </p>
+                    <strong>Bob Vance</strong>
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -78,15 +78,15 @@ $count = $pdo->query('SELECT id FROM contact')->fetchAll();
                     </thead>
                     <tbody>
                         <?php
-                        for ($i = 0; $i < count($count); $i++) {
+                        for ($i = 0; $i < count($pdo->query('SELECT id FROM contact')->fetchAll()); $i++) {
                         ?>
                             <tr>
                                 <td><?= $contactTable[$i]["id"] ?></td>
-                                <td><?= $contactTable[$i]["name"] ?></td>
-                                <td><?= $contactTable[$i]["surname"] ?></td>
+                                <td><?= $contactTable[$i]["voornaam"] ?></td>
+                                <td><?= $contactTable[$i]["achternaam"] ?></td>
                                 <td><?= $contactTable[$i]["email"] ?></td>
-                                <td><?= $contactTable[$i]["phone_number"] ?></td>
-                                <td><textarea placeholder="<?= $contactTable[$i]["message"] ?>" readonly></textarea></td>
+                                <td><?= $contactTable[$i]["telefoon"] ?></td>
+                                <td><textarea placeholder="<?= $contactTable[$i]["bericht"] ?>" readonly></textarea></td>
                             </tr>
                         <?php
                         }
@@ -99,7 +99,7 @@ $count = $pdo->query('SELECT id FROM contact')->fetchAll();
     </main>
     <footer class="text-muted text-center py-5 bg-dark">
         <div class="container">
-            <p class="text-muted">&copy; 2022 GameCollect.</p>
+            <p class="text-muted">&copy; 2022 Bob's Fridges.</p>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>

@@ -1,3 +1,6 @@
+<?php
+include('connect.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +34,6 @@
                     <div class="col-sm-4 offset-md-1 py-4">
                         <h4 class="text-white">Navigatie</h4>
                         <ul class="list-unstyled">
-                            <li><a href="index.html" class="text-white">Home</a></li>
                             <li><a href="contact.php" class="text-white">Contact</a></li>
                             <li><a href="products.php" class="text-white">Assortiment</a></li>
                             <li><a href="view.php" class="text-white">Beheersysteem</a></li>
@@ -42,12 +44,12 @@
         </div>
         <div class="navbar navbar-dark bg-info shadow-sm">
             <div class="container">
-                <a href="sign_in.html" class="navbar-brand d-flex align-items-center">
+                <a href="sign_in.php" class="navbar-brand d-flex align-items-center">
                     <img src="images/profile.png" width="20" height="20" fill="none" stroke="currentColor"
                         stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2"
                         viewBox="0 0 24 24">
                     </img>
-                    <strong>Inloggen</strong>
+                    <strong><?= $_SESSION['adminUser']?></strong>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
                     aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
@@ -170,7 +172,7 @@
     </main>
     <footer class="text-muted text-center py-5 bg-dark">
         <div class="container">
-            <p class="text-muted">&copy; 2023 Bob's Fridges.</p>
+            <p class="text-muted">&copy; 2022 Bob's Fridges.</p>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"

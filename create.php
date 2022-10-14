@@ -105,7 +105,7 @@ if (isset($_POST['submit'])) {
 
         <footer class="text-muted text-center py-5">
             <div class="container">
-                <p class="mb-1">&copy; 2023 Bob's Fridges</p>
+                <p class="mb-1">&copy; 2022 Bob's Fridges</p>
             </div>
         </footer>
     </div>

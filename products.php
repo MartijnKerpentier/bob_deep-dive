@@ -1,6 +1,5 @@
 <?php
 include('connect.php');
-$count = $pdo->query('SELECT id FROM koelkasten')->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,7 +69,7 @@ $count = $pdo->query('SELECT id FROM koelkasten')->fetchAll();
                 <div class="container">
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                         <?php
-                        for ($i = 0; $i < count($count); $i++) {
+                        for ($i = 0; $i < count($pdo->query('SELECT id FROM koelkasten')->fetchAll()); $i++) {
                         ?>
                             <div class="col">
                                 <div class="card shadow-sm">
@@ -94,7 +93,7 @@ $count = $pdo->query('SELECT id FROM koelkasten')->fetchAll();
     </main>
     <footer class="text-muted text-center py-5 bg-dark">
         <div class="container">
-            <p class="text-muted">&copy; 2023 Bob's Fridges.</p>
+            <p class="text-muted">&copy; 2022 Bob's Fridges.</p>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
