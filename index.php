@@ -36,8 +36,17 @@ include('connect.php');
                         <ul class="list-unstyled">
                             <li><a href="contact.php" class="text-white">Contact</a></li>
                             <li><a href="products.php" class="text-white">Assortiment</a></li>
-                            <li><a href="view.php" class="text-white">Beheersysteem</a></li>
+                            <?php
+                            if (isset($_SESSION['isUserAdmin'])) {
+                                if ($_SESSION['isUserAdmin'] == true) {
+                                    ?>
+                                    <li><a href="view.php" class="text-white">Beheersysteem</a></li>
+                                    <?php
+                                }
+                            }
+                            ?>
                         </ul>
+                        <h4><a href="log_out.php" class="text-white">Uitloggen</a></h4>
                     </div>
                 </div>
             </div>

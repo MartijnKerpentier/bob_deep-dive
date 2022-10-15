@@ -1,6 +1,5 @@
 <?php
 include('connect.php');
-var_dump($_SESSION);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,6 +35,7 @@ var_dump($_SESSION);
                         <ul class="list-unstyled">
                             <li><a href="index.php" class="text-white">Home pagina</a></li>
                         </ul>
+                        <h3><a href="log_out.php" class="text-white">Uitloggen</a></h3>
                     </div>
                 </div>
             </div>

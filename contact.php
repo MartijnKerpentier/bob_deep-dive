@@ -63,6 +63,7 @@ if (isset($_POST['submit'])) {
                             }
                             ?>
                         </ul>
+                        <h3><a href="log_out.php" class="text-white">Uitloggen</a></h3>
                     </div>
                 </div>
             </div>

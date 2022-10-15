@@ -10,7 +10,6 @@ include('connect.php');
     <title>Bekijk berichten · GameCollect</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="view.css">
-    <link rel="stylesheet" href="contact.css">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
@@ -35,6 +34,7 @@ include('connect.php');
                         <ul class="list-unstyled">
                             <li><a href="index.php" class="text-white">Home pagina</a></li>
                         </ul>
+                        <h3><a href="log_out.php" class="text-white">Uitloggen</a></h3>
                     </div>
                 </div>
             </div>
@@ -56,7 +56,7 @@ include('connect.php');
         <section class="py-5 text-center container">
             <div class="row py-lg-5">
                 <div class="col-lg-6 col-md-8 mx-auto">
-                    <h1 class="fw-light">GameCollect | Beheersysteem</h1>
+                    <h1 class="fw-light">Bob's Fridges | Beheersysteem</h1>
                     <p class="lead text-muted">Op deze pagina kunnen de berichten bekeken worden om antwoord
                         te kunnen geven op de klanten.</p>
                     <p><a href="view.php" class="btn btn-dark my-1">Terug naar data beheren</a></p>

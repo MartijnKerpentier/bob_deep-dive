@@ -37,6 +37,7 @@ include('connect.php');
                             <li><a href="contact.php" class="text-white">Contact</a></li>
                             <li><a href="products.php" class="text-white">Assortiment</a></li>
                         </ul>
+                        <h3><a href="log_out.php" class="text-white">Uitloggen</a></h3>
                     </div>
                 </div>
             </div>

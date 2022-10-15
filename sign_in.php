@@ -16,14 +16,7 @@ if (isset($_POST['submit'])) {
             $_SESSION['user'] = $usersTable[$i]['gebruikersnaam'];
             header('Location: index.php');
         } else {
-?>
-            <script>
-                alert(`De ingevoerde gegevens zijn niet deel van een bestaand account.
-                1. Registreer bij ons voor een nieuw account.
-                2. Controleer de gegevens goed.
-                3. Neem contact op als u uw wachtwoord bent vergeten.`)
-            </script>
-<?php
+            header('Location: sign_in.php');
         }
     }
 }
