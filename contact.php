@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
         VALUES 
         ('$name', '$surname', '$email', '$telNumber', '$message')";
     $pdo->exec($sql);
-    header("Location: index.html");
+    header("Location: index.php");
 }
 ?>
 <!DOCTYPE html>
@@ -50,10 +50,18 @@ if (isset($_POST['submit'])) {
                     <div class="col-sm-4 offset-md-1 py-4">
                         <h4 class="text-white">Navigatie</h4>
                         <ul class="list-unstyled">
-                            <li><a href="index.html" class="text-white">Home</a></li>
+                            <li><a href="index.php" class="text-white">Home</a></li>
                             <li><a href="contact.php" class="text-white">Contact</a></li>
                             <li><a href="products.php" class="text-white">Assortiment</a></li>
-                            <li><a href="view.php" class="text-white">Beheersysteem</a></li>
+                            <?php
+                            if (isset($_SESSION['isUserAdmin'])) {
+                                if ($_SESSION['isUserAdmin'] == true) {
+                                    ?>
+                                    <li><a href="view.php" class="text-white">Beheersysteem</a></li>
+                                    <?php
+                                }
+                            }
+                            ?>
                         </ul>
                     </div>
                 </div>
@@ -61,10 +69,10 @@ if (isset($_POST['submit'])) {
         </div>
         <div class="navbar navbar-dark bg-info shadow-sm">
             <div class="container">
-                <a href="#" class="navbar-brand d-flex align-items-center">
+                <a href="sign_in.php" class="navbar-brand d-flex align-items-center">
                     <img src="images/profile.png" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24">
                     </img>
-                    <strong>Inloggen</strong>
+                    <strong><?= $_SESSION['adminUser'] ?? $_SESSION['user'] ?? 'Inloggen'?></strong>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>

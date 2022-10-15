@@ -49,7 +49,7 @@ include('connect.php');
                         stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2"
                         viewBox="0 0 24 24">
                     </img>
-                    <strong><?= $_SESSION['adminUser']?></strong>
+                    <strong><?= $_SESSION['adminUser'] ?? $_SESSION['user'] ?? 'Inloggen'?></strong>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
                     aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">

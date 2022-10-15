@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
                 alert(`De ingevoerde gegevens zijn niet deel van een bestaand account.
                 1. Registreer bij ons voor een nieuw account.
                 2. Controleer de gegevens goed.
-                3. Neem contact met ons op als u uw wachtwoord bent vergeten.`)
+                3. Neem contact op als u uw wachtwoord bent vergeten.`)
             </script>
 <?php
         }
@@ -63,7 +63,7 @@ if (isset($_POST['submit'])) {
                     <div class="col-sm-4 offset-md-1 py-4">
                         <h4 class="text-white">Navigatie</h4>
                         <ul class="list-unstyled">
-                            <li><a href="index.html" class="text-white">Home pagina</a></li>
+                            <li><a href="index.php" class="text-white">Home pagina</a></li>
                         </ul>
                     </div>
                 </div>
@@ -106,6 +106,14 @@ if (isset($_POST['submit'])) {
                                 <div class="col">
                                     <div class="col-md-12">
                                         <button class="w-100 btn btn-primary btn-lg" type="submit" name="submit">Log in</button>
+                                    </div>
+                                </div>
+                                <hr>
+                                <br>
+                                <div class="col">
+                                    <h3>Nog geen account? Registreer je bij ons!</h3>
+                                    <div class="col-md-12">
+                                        <a href="sign_up.php" class="w-100 btn btn-primary btn-lg">Registreren</a>
                                     </div>
                                 </div>
                         </div>
